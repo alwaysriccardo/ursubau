@@ -7,6 +7,7 @@ export const CONTACT_INFO = {
   whatsapp: "41795479665",
   email: "Ursu.Bauu@gmail.com",
   tiktok: "https://www.tiktok.com/@ursubaugmbh?_r=1&_t=ZN-99lAxxtOp0w",
+  facebook: "https://www.facebook.com/share/198fiGAxBm/",
   address: "Riedbrunnenstrasse 33, 5012 Schönenwerd SO, Switzerland",
   addressLine1: "Riedbrunnenstrasse 33",
   addressLine2: "5012 Schönenwerd, Solothurn",

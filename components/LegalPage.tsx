@@ -48,7 +48,7 @@ const PRIVACY_SECTIONS: Section[] = [
       <p><strong>Google Maps:</strong> Zur Darstellung unseres Standorts binden wir Karten von Google Ireland Ltd. / Google LLC ein. Dabei wird Ihre IP-Adresse an Google übermittelt.</p>
       <p><strong>Google Fonts und Content Delivery Networks:</strong> Schriftarten und technische Bibliotheken werden von externen Servern (u. a. Google, Tailwind CSS CDN) geladen. Dabei wird Ihre IP-Adresse an diese Anbieter übermittelt.</p>
       <p><strong>Bilder von Unsplash:</strong> Einzelne Hintergrundbilder werden von den Servern von Unsplash geladen.</p>
-      <p><strong>TikTok und WhatsApp:</strong> Auf unserer Website befinden sich lediglich Links zu TikTok und WhatsApp. Erst wenn Sie einen solchen Link anklicken, werden Daten an den jeweiligen Anbieter (TikTok / Meta) übermittelt. Es gelten deren Datenschutzbestimmungen.</p>
+      <p><strong>TikTok, Facebook und WhatsApp:</strong> Auf unserer Website befinden sich lediglich Links zu TikTok, Facebook und WhatsApp. Erst wenn Sie einen solchen Link anklicken, werden Daten an den jeweiligen Anbieter (TikTok / Meta) übermittelt. Es gelten deren Datenschutzbestimmungen.</p>
     </> },
   { title: '7. Cookies', body: <p>Diese Website verwendet keine Tracking- oder Marketing-Cookies und keine Analyse-Tools.</p> },
   { title: '8. Aufbewahrungsdauer', body: <p>Wir bewahren Personendaten nur so lange auf, wie es für die genannten Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten (z. B. 10 Jahre für Geschäftsunterlagen) bestehen.</p> },
