@@ -43,6 +43,8 @@ export const translations = {
     service_4: "Bodenbeläge",
     service_5: "Verputz & Trockenbau",
     service_6: "Fassadensanierung",
+    service_7: "Fliesenleger",
+    service_8: "Abbruch / Rückbau",
 
     // Cleaning Services
     clean_title: "REINIGUNG",
@@ -154,6 +156,8 @@ export const translations = {
     service_4: "Suelos",
     service_5: "Enlucido y pladur",
     service_6: "Renovación de fachadas",
+    service_7: "Colocación de azulejos",
+    service_8: "Demolición / Desmontaje",
 
     // Cleaning Services
     clean_title: "LIMPIEZA",
@@ -265,6 +269,8 @@ export const translations = {
     service_4: "Flooring",
     service_5: "Plastering & Drywall",
     service_6: "Facade Renovation",
+    service_7: "Tiling",
+    service_8: "Demolition / Strip-out",
 
     // Cleaning Services
     clean_title: "CLEANING",

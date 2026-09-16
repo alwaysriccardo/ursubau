@@ -27,7 +27,9 @@ export const RENOVATION_SERVICES = [
   "Insulation",
   "Flooring",
   "Plastering & Drywall",
-  "Facade Renovation"
+  "Facade Renovation",
+  "Tiling",
+  "Demolition"
 ];
 
 export const CLEANING_SERVICES = [

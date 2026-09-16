@@ -300,7 +300,7 @@ const App: React.FC = () => {
                <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-4">{t('reno_title')}</h2>
              </div>
 
-             <div className="reveal-text grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+             <div className="reveal-text grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
                {RENOVATION_SERVICES.map((service, i) => (
                  <div 
                    key={i} 
