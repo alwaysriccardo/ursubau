@@ -19,6 +19,10 @@ export const PortfolioSection: React.FC = () => {
     try {
       const response = await fetch('/api/portfolio/get');
       const data = await response.json();
+      // The API returns an error object when storage isn't configured – fall back to an empty portfolio
+      if (!response.ok || !Array.isArray(data?.projects)) {
+        throw new Error(data?.error || `Portfolio request failed (${response.status})`);
+      }
       setPortfolio(data);
       if (data.projects.length > 0) {
         setSelectedProjectId(data.projects[0].id);
@@ -122,7 +126,7 @@ export const PortfolioSection: React.FC = () => {
           {selectedProject && portfolio.projects.length > 0 && (
             <div style={styles.mediaGrid}>
               {selectedProject.media.length === 0 ? (
-                <p style={styles.emptyText}>{t('portfolio_no_media')}</p>
+                <p style={styles.mediaEmptyText}>{t('portfolio_no_media')}</p>
               ) : (
                 selectedProject.media.map((media, index) => (
                   <div
@@ -378,7 +382,7 @@ const styles = {
     color: '#6B5D4F',
     background: '#E8DCC8',
   },
-  emptyText: {
+  mediaEmptyText: {
     textAlign: 'center' as const,
     color: '#999',
     fontSize: '16px',
