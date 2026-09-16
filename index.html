@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ursu Bau GmbH | Bau, Renovierung & Reinigung</title>
+    <link rel="icon" type="image/jpeg" href="/ursubaulogo.jpg" />
+    <meta name="description" content="Ursu Bau GmbH – Renovierungen, Malerarbeiten, Bodenbeläge und Reinigung in Zürich, Solothurn, Bern und Aargau. Riedbrunnenstrasse 33, 5012 Schönenwerd." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'swiss-cream': '#F2F0EB',
+              'swiss-dark': '#121212',
+              'swiss-gold': '#C5A059',
+              'swiss-stone': '#8C8C8C',
+            },
+            fontFamily: {
+              display: ['Syncopate', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+              body: ['Manrope', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Global Styles for Lenis and Cursor -->
+    <style>
+      body {
+        cursor: none; /* Custom cursor */
+        background-color: #F2F0EB;
+      }
+      a, button, input, textarea {
+        cursor: none;
+      }
+      .cursor-dot,
+      .cursor-outline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none;
+      }
+      .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #121212;
+      }
+      .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(18, 18, 18, 0.5);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+      }
+      body.dark-mode .cursor-dot { background-color: #F2F0EB; }
+      body.dark-mode .cursor-outline { border-color: rgba(242, 240, 235, 0.5); }
+      
+      html.lenis, html.lenis body {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
+      .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "gsap": "https://esm.sh/gsap@^3.14.2",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "gsap/": "https://esm.sh/gsap@^3.14.2/",
+    "@studio-freight/lenis": "https://esm.sh/@studio-freight/lenis@^1.0.42"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-swiss-cream text-swiss-dark antialiased selection:bg-swiss-gold selection:text-white overflow-x-hidden opacity-0">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
