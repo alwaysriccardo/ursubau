@@ -22,7 +22,6 @@ export const LOCATIONS: Location[] = [
 
 export const RENOVATION_SERVICES = [
   "Painting",
-  "Wallpapering",
   "Decorative Techniques",
   "Insulation",
   "Flooring",

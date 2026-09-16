@@ -38,12 +38,11 @@ export const translations = {
     reno_disclaimer: "Sämtliche Arbeiten werden von erfahrenen Fachkräften ausgeführt. Offerten sind kostenlos und unverbindlich.",
 
     service_1: "Malerarbeiten",
-    service_2: "Tapezieren",
-    service_3: "Dekorative Techniken",
-    service_4: "Isolierung",
-    service_5: "Bodenbeläge",
-    service_6: "Verputz & Trockenbau",
-    service_7: "Fassadensanierung",
+    service_2: "Dekorative Techniken",
+    service_3: "Isolierung",
+    service_4: "Bodenbeläge",
+    service_5: "Verputz & Trockenbau",
+    service_6: "Fassadensanierung",
 
     // Cleaning Services
     clean_title: "REINIGUNG",
@@ -150,12 +149,11 @@ export const translations = {
     reno_disclaimer: "Todos los trabajos los realizan profesionales con experiencia. Presupuestos gratuitos y sin compromiso.",
 
     service_1: "Pintura",
-    service_2: "Empapelado",
-    service_3: "Técnicas decorativas",
-    service_4: "Aislamiento",
-    service_5: "Suelos",
-    service_6: "Enlucido y pladur",
-    service_7: "Renovación de fachadas",
+    service_2: "Técnicas decorativas",
+    service_3: "Aislamiento",
+    service_4: "Suelos",
+    service_5: "Enlucido y pladur",
+    service_6: "Renovación de fachadas",
 
     // Cleaning Services
     clean_title: "LIMPIEZA",
@@ -262,12 +260,11 @@ export const translations = {
     reno_disclaimer: "All work is carried out by experienced specialists. Quotes are free and non-binding.",
 
     service_1: "Painting",
-    service_2: "Wallpapering",
-    service_3: "Decorative Techniques",
-    service_4: "Insulation",
-    service_5: "Flooring",
-    service_6: "Plastering & Drywall",
-    service_7: "Facade Renovation",
+    service_2: "Decorative Techniques",
+    service_3: "Insulation",
+    service_4: "Flooring",
+    service_5: "Plastering & Drywall",
+    service_6: "Facade Renovation",
 
     // Cleaning Services
     clean_title: "CLEANING",
