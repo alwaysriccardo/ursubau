@@ -1,4 +1,5 @@
 import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3';
+import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 const r2Client = new S3Client({
   region: 'auto',
@@ -32,6 +33,18 @@ export const getFromR2 = async (key: string) => {
   
   const response = await r2Client.send(command);
   return response.Body;
+};
+
+// Public URL when the bucket is public, otherwise a temporary signed link (private bucket)
+export const buildMediaUrl = async (key: string, expiresIn = 86400): Promise<string> => {
+  if (process.env.R2_PUBLIC_URL) {
+    return `${process.env.R2_PUBLIC_URL}/${key}`;
+  }
+  const command = new GetObjectCommand({
+    Bucket: process.env.R2_BUCKET_NAME,
+    Key: key,
+  });
+  return getSignedUrl(r2Client, command, { expiresIn });
 };
 
 export const deleteFromR2 = async (key: string) => {

@@ -110,7 +110,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             throw new Error('Failed to generate upload URL');
           }
 
-          const { uploadUrl, publicUrl } = await urlResponse.json();
+          const { uploadUrl, publicUrl, filePath } = await urlResponse.json();
           console.log('Presigned URL generated:', uploadUrl.substring(0, 50) + '...');
 
           // Step 2: Upload directly to R2
@@ -143,6 +143,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             body: JSON.stringify({
               projectId: selectedProject,
               publicUrl: publicUrl,
+              key: filePath,
               mediaType: mediaType,
               caption: '',
             }),

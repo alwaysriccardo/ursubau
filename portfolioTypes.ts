@@ -1,4 +1,5 @@
 export interface MediaItem {
+  key?: string;
   url: string;
   type: 'image' | 'video';
   caption?: string;
@@ -11,6 +12,7 @@ export interface Project {
   subtitle: string;
   folderName: string;
   coverImage: string;
+  coverKey?: string;
   media: MediaItem[];
   order: number;
   createdAt: string;

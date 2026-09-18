@@ -28,9 +28,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
-    const { projectId, publicUrl, mediaType, caption } = req.body;
+    const { projectId, publicUrl, key, mediaType, caption } = req.body;
 
-    if (!projectId || !publicUrl || !mediaType) {
+    if (!projectId || !mediaType || !(key || publicUrl)) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
@@ -51,7 +51,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Add media to project
     const newMedia = {
-      url: publicUrl,
+      key: key || '',
+      url: publicUrl || '',
       type: mediaType,
       caption: caption || '',
       uploadedAt: new Date().toISOString(),
@@ -60,8 +61,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     project.media.push(newMedia);
 
     // Set cover image if this is the first media item
-    if (!project.coverImage && mediaType === 'image') {
-      project.coverImage = publicUrl;
+    if (!project.coverKey && !project.coverImage && mediaType === 'image') {
+      project.coverKey = key || '';
+      project.coverImage = publicUrl || '';
     }
 
     // Save updated portfolio.json

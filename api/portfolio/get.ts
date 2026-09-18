@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getFromR2 } from '../utils/r2Client.js';
+import { getFromR2, buildMediaUrl } from '../utils/r2Client.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Enable CORS
@@ -32,6 +32,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Convert stream to string
     const dataString = await streamToString(portfolioData);
     const portfolio = JSON.parse(dataString);
+
+    // Media is stored by object key; hand the browser a URL it can load right now
+    for (const project of portfolio.projects || []) {
+      for (const media of project.media || []) {
+        if (media.key) {
+          media.url = await buildMediaUrl(media.key);
+        }
+      }
+      if (project.coverKey) {
+        project.coverImage = await buildMediaUrl(project.coverKey);
+      }
+    }
 
     return res.status(200).json(portfolio);
   } catch (error: any) {

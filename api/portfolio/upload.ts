@@ -72,6 +72,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Add media to project
     const newMedia = {
+      key: filePath,
       url: fileUrl,
       type: mediaType,
       caption: caption || '',
@@ -81,7 +82,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     project.media.push(newMedia);
 
     // Set cover image if this is the first media item
-    if (!project.coverImage && mediaType === 'image') {
+    if (!project.coverKey && !project.coverImage && mediaType === 'image') {
+      project.coverKey = filePath;
       project.coverImage = fileUrl;
     }
 

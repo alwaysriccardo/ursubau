@@ -53,27 +53,29 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (mediaUrl) {
       // Delete specific media item
-      const mediaIndex = project.media.findIndex((m: any) => m.url === mediaUrl);
+      const mediaIndex = project.media.findIndex((m: any) => m.url === mediaUrl || (m.key && mediaUrl.includes(m.key)));
       if (mediaIndex === -1) {
         return res.status(404).json({ error: 'Media not found' });
       }
 
       // Extract file path from URL and delete from R2
-      const urlPath = keyFromUrl(mediaUrl);
+      const urlPath = project.media[mediaIndex].key || keyFromUrl(mediaUrl);
       await deleteFromR2(urlPath);
 
       // Remove from project media array
       project.media.splice(mediaIndex, 1);
 
       // Update cover image if we deleted it
-      if (project.coverImage === mediaUrl) {
-        project.coverImage = project.media.find((m: any) => m.type === 'image')?.url || '';
+      if (project.coverImage === mediaUrl || (project.coverKey && mediaUrl.includes(project.coverKey))) {
+        const nextCover = project.media.find((m: any) => m.type === 'image');
+        project.coverKey = nextCover?.key || '';
+        project.coverImage = nextCover?.url || '';
       }
     } else {
       // Delete entire project
       // Delete all media files from R2
       for (const media of project.media) {
-        const urlPath = keyFromUrl(media.url);
+        const urlPath = media.key || keyFromUrl(media.url);
         try {
           await deleteFromR2(urlPath);
         } catch (error) {

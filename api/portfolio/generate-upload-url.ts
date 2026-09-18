@@ -62,8 +62,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const presignedUrl = await getSignedUrl(r2Client, command, { expiresIn: 600 });
 
-    // Construct the public URL that will be used after upload
-    const publicUrl = `${process.env.R2_PUBLIC_URL}/${filePath}`;
+    // Only meaningful for a public bucket; private buckets are read through signed links
+    const publicUrl = process.env.R2_PUBLIC_URL ? `${process.env.R2_PUBLIC_URL}/${filePath}` : '';
 
     return res.status(200).json({
       success: true,
