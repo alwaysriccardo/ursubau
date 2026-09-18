@@ -36,7 +36,7 @@ export const getFromR2 = async (key: string) => {
 };
 
 // Public URL when the bucket is public, otherwise a temporary signed link (private bucket)
-export const buildMediaUrl = async (key: string, expiresIn = 86400): Promise<string> => {
+export const buildMediaUrl = async (key: string, expiresIn = 172800): Promise<string> => {
   if (process.env.R2_PUBLIC_URL) {
     return `${process.env.R2_PUBLIC_URL}/${key}`;
   }
@@ -44,7 +44,12 @@ export const buildMediaUrl = async (key: string, expiresIn = 86400): Promise<str
     Bucket: process.env.R2_BUCKET_NAME,
     Key: key,
   });
-  return getSignedUrl(r2Client, command, { expiresIn });
+  // Anchor the signature to the start of the current day so every visitor gets the
+  // identical URL for 24h and the browser cache actually hits (a fresh signature per
+  // request would re-download every image on every visit). Valid for 48h from then.
+  const signingDate = new Date();
+  signingDate.setUTCHours(0, 0, 0, 0);
+  return getSignedUrl(r2Client, command, { expiresIn, signingDate });
 };
 
 export const deleteFromR2 = async (key: string) => {
