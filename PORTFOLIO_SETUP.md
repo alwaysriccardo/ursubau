@@ -78,3 +78,13 @@ leave `R2_PUBLIC_URL` unset and the API signs every media URL on the fly (valid 
 2. Click `+` to create a project (title + optional subtitle).
 3. Select the project → **Upload Media** → choose images/videos.
 4. The first image becomes the cover. Projects appear in the "Portfolio" section of the homepage.
+
+## Upload limits
+
+- No limit imposed by the site: files go browser → bucket directly (Vercel's 4.5 MB
+  request limit does not apply).
+- Single file: up to 5 GB (S3 single-part upload limit).
+- Upload window: the upload link is valid 1 hour; the transfer must finish within it.
+- Free plan: 10 GB stored in total, and free downloads up to 3x stored volume per month.
+- Practical advice: resize photos to ~1600px (<300 KB) and keep videos under ~100 MB,
+  or link them from TikTok/YouTube instead of hosting them here.

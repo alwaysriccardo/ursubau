@@ -53,14 +53,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const uniqueFileName = `${nanoid(10)}.${fileExtension}`;
     const filePath = `projects/${folderName}/${uniqueFileName}`;
 
-    // Generate presigned URL for upload (valid for 10 minutes)
+    // Generate presigned URL for upload (valid for 1 hour, so large videos on a
+    // slow connection still finish within the window)
     const command = new PutObjectCommand({
       Bucket: process.env.R2_BUCKET_NAME,
       Key: filePath,
       ContentType: contentType,
     });
 
-    const presignedUrl = await getSignedUrl(r2Client, command, { expiresIn: 600 });
+    const presignedUrl = await getSignedUrl(r2Client, command, { expiresIn: 3600 });
 
     // Only meaningful for a public bucket; private buckets are read through signed links
     const publicUrl = process.env.R2_PUBLIC_URL ? `${process.env.R2_PUBLIC_URL}/${filePath}` : '';
