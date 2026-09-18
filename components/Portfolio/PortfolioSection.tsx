@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { ChevronLeft, ChevronRight, X, Lock } from 'lucide-react';
 import type { Portfolio, Project, MediaItem } from '../../portfolioTypes';
 import { useLanguage } from '../../LanguageContext';
@@ -171,8 +172,9 @@ export const PortfolioSection: React.FC = () => {
         </div>
       </section>
 
-      {/* Lightbox */}
-      {lightboxMedia && (
+      {/* Lightbox – portalled to <body> so it escapes the page wrapper's stacking
+          context, otherwise the fixed navigation paints over the close button */}
+      {lightboxMedia && createPortal(
         <div style={styles.lightbox} onClick={() => setLightboxMedia(null)}>
           <button 
             style={styles.closeBtn} 
@@ -200,7 +202,8 @@ export const PortfolioSection: React.FC = () => {
               <p style={styles.lightboxCaption}>{lightboxMedia.caption}</p>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
@@ -405,14 +408,15 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 9999,
+    zIndex: 10001,
     padding: '20px',
   },
   closeBtn: {
-    position: 'absolute' as const,
-    top: '20px',
+    position: 'fixed' as const,
+    top: 'max(20px, env(safe-area-inset-top, 0px))',
     right: '20px',
-    background: 'rgba(255, 255, 255, 0.2)',
+    zIndex: 10002,
+    background: 'rgba(255, 255, 255, 0.25)',
     border: 'none',
     color: 'white',
     cursor: 'pointer',
