@@ -24,7 +24,6 @@ export const LOCATIONS: Location[] = [
 export const RENOVATION_SERVICES = [
   "Painting",
   "Decorative Techniques",
-  "Insulation",
   "Flooring",
   "Plastering & Drywall",
   "Facade Renovation",
@@ -43,9 +42,9 @@ export const FEATURED_PROJECTS: ServiceItem[] = [
   {
     id: "01",
     title: "3-Bedroom Apartment Renovation",
-    description: "Full interior renovation including new flooring installation, wall insulation upgrade, and complete painting. Completed in 6 weeks with minimal disruption to neighboring units.",
+    description: "Full interior renovation including new flooring installation and complete painting. Completed in 6 weeks with minimal disruption to neighboring units.",
     image: "/01.jpeg",
-    categories: ["Flooring", "Insulation", "Painting"]
+    categories: ["Flooring", "Painting"]
   },
   {
     id: "02",

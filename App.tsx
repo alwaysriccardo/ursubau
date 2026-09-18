@@ -216,6 +216,26 @@ const App: React.FC = () => {
               {t('intro_title')} <br />
               <span className="text-swiss-gold italic font-serif">{t('intro_subtitle')}</span>
             </h2>
+
+            {/* New client offer – compact, sits directly under the headline */}
+            <div className="mt-6 reveal-text">
+              <a
+                href={`mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent('Neukunden-Rabatt 20% – Offerte anfragen')}`}
+                className="group inline-flex flex-wrap items-center gap-x-3 gap-y-1 max-w-full bg-swiss-gold/10 hover:bg-swiss-gold/20 border border-swiss-gold/60 rounded-full pl-4 pr-3 py-2 transition-colors"
+              >
+                <span className="text-swiss-gold text-sm">✦</span>
+                <span className="hidden sm:inline font-display text-[10px] md:text-xs uppercase tracking-[0.15em] text-swiss-dark">
+                  {t('promo_label')}
+                </span>
+                <span className="font-serif italic text-base md:text-lg text-swiss-dark">
+                  {t('promo_title')}
+                </span>
+                <ArrowRight size={14} className="text-swiss-gold group-hover:translate-x-1 transition-transform" />
+              </a>
+              <p className="text-[10px] text-swiss-stone/80 mt-2 pl-4 pr-14 md:pr-0 leading-snug">
+                {t('promo_note')}
+              </p>
+            </div>
           </div>
           <div className="font-body text-base sm:text-lg md:text-xl font-light leading-relaxed text-swiss-stone space-y-8 reveal-text mt-8 md:mt-0">
             <p>

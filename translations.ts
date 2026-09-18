@@ -18,6 +18,12 @@ export const translations = {
     intro_est: "Est. 2026",
     intro_desc: "Wir machen aus Räumen ein Zuhause – mit sorgfältigen Renovierungen und gründlicher Reinigung. Termingerecht, transparent und zum vereinbarten Preis.",
 
+
+    // New client promo
+    promo_label: "NEUKUNDEN-AKTION",
+    promo_title: "20% Rabatt auf die erste Offerte",
+    promo_note: "Einmalig für Neukunden, auf alle Arbeiten. Nicht kumulierbar.",
+    
     // Projects
     projects_title: "UNSERE REFERENZEN",
     projects_subtitle: "Ausgewählte Arbeiten",
@@ -25,7 +31,7 @@ export const translations = {
 
     // Featured Projects
     project_1_title: "3-Zimmer-Wohnung Renovierung",
-    project_1_desc: "Komplette Innenrenovierung mit neuer Bodenverlegung, Wandisolierung und vollständiger Bemalung. In 6 Wochen mit minimaler Störung abgeschlossen.",
+    project_1_desc: "Komplette Innenrenovierung mit neuer Bodenverlegung und vollständiger Bemalung. In 6 Wochen mit minimaler Störung abgeschlossen.",
     project_2_title: "Büroraum Sanierung",
     project_2_desc: "Gewerbliche Immobilie: Trockenbauinstallation, professionelle Bemalung und dekorative Oberflächen. Termingerecht geliefert.",
     project_3_title: "Historisches Gebäude Restaurierung",
@@ -39,12 +45,11 @@ export const translations = {
 
     service_1: "Malerarbeiten",
     service_2: "Dekorative Techniken",
-    service_3: "Isolierung",
-    service_4: "Bodenbeläge",
-    service_5: "Verputz & Trockenbau",
-    service_6: "Fassadensanierung",
-    service_7: "Fliesenleger",
-    service_8: "Abbruch / Rückbau",
+    service_3: "Bodenbeläge",
+    service_4: "Verputz & Trockenbau",
+    service_5: "Fassadensanierung",
+    service_6: "Fliesenleger",
+    service_7: "Abbruch / Rückbau",
 
     // Cleaning Services
     clean_title: "REINIGUNG",
@@ -131,6 +136,12 @@ export const translations = {
     intro_est: "Fundada en 2026",
     intro_desc: "Convertimos espacios en hogares con renovaciones cuidadosas y una limpieza a fondo. Puntuales, transparentes y al precio acordado.",
 
+
+    // New client promo
+    promo_label: "OFERTA PARA NUEVOS CLIENTES",
+    promo_title: "20% en su primer presupuesto",
+    promo_note: "Una sola vez para nuevos clientes, en todos los trabajos. No acumulable.",
+    
     // Projects
     projects_title: "NUESTRAS REFERENCIAS",
     projects_subtitle: "Trabajos seleccionados",
@@ -138,7 +149,7 @@ export const translations = {
 
     // Featured Projects
     project_1_title: "Renovación de apartamento de 3 habitaciones",
-    project_1_desc: "Renovación interior completa con instalación de suelo nuevo, aislamiento de paredes y pintura completa. Terminada en 6 semanas con mínimas molestias.",
+    project_1_desc: "Renovación interior completa con instalación de suelo nuevo y pintura completa. Terminada en 6 semanas con mínimas molestias.",
     project_2_title: "Reforma de oficinas",
     project_2_desc: "Inmueble comercial: instalación de pladur, pintura profesional y acabados decorativos. Entregado en plazo.",
     project_3_title: "Restauración de edificio histórico",
@@ -152,12 +163,11 @@ export const translations = {
 
     service_1: "Pintura",
     service_2: "Técnicas decorativas",
-    service_3: "Aislamiento",
-    service_4: "Suelos",
-    service_5: "Enlucido y pladur",
-    service_6: "Renovación de fachadas",
-    service_7: "Colocación de azulejos",
-    service_8: "Demolición / Desmontaje",
+    service_3: "Suelos",
+    service_4: "Enlucido y pladur",
+    service_5: "Renovación de fachadas",
+    service_6: "Colocación de azulejos",
+    service_7: "Demolición / Desmontaje",
 
     // Cleaning Services
     clean_title: "LIMPIEZA",
@@ -244,6 +254,12 @@ export const translations = {
     intro_est: "Est. 2026",
     intro_desc: "We turn spaces into homes with careful renovations and thorough cleaning. On schedule, transparent and at the agreed price.",
 
+
+    // New client promo
+    promo_label: "NEW CLIENT OFFER",
+    promo_title: "20% off your first quote",
+    promo_note: "One-time offer for new clients, on all work. Not combinable with other discounts.",
+    
     // Projects
     projects_title: "OUR REFERENCES",
     projects_subtitle: "Selected work",
@@ -251,7 +267,7 @@ export const translations = {
 
     // Featured Projects
     project_1_title: "3-Bedroom Apartment Renovation",
-    project_1_desc: "Full interior renovation including new flooring installation, wall insulation upgrade, and complete painting. Completed in 6 weeks with minimal disruption.",
+    project_1_desc: "Full interior renovation including new flooring installation and complete painting. Completed in 6 weeks with minimal disruption.",
     project_2_title: "Office Space Refurbishment",
     project_2_desc: "Commercial property makeover: drywall installation, professional painting, and decorative finishes. Delivered on schedule.",
     project_3_title: "Historic Building Restoration",
@@ -265,12 +281,11 @@ export const translations = {
 
     service_1: "Painting",
     service_2: "Decorative Techniques",
-    service_3: "Insulation",
-    service_4: "Flooring",
-    service_5: "Plastering & Drywall",
-    service_6: "Facade Renovation",
-    service_7: "Tiling",
-    service_8: "Demolition / Strip-out",
+    service_3: "Flooring",
+    service_4: "Plastering & Drywall",
+    service_5: "Facade Renovation",
+    service_6: "Tiling",
+    service_7: "Demolition / Strip-out",
 
     // Cleaning Services
     clean_title: "CLEANING",
